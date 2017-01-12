@@ -1,6 +1,5 @@
 # SheepToasts
 Light weight and simple custom alerts (toasts) in pure JavaScript.
-
 **Warning: You have to use [Animate.css](https://daneden.github.io/animate.css/), to use animations of toasts.**
 
 ## Constructor
