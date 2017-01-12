@@ -1,3 +1,10 @@
+/*****************************************************
+ Name: SheepToasts
+ Version: 1.0
+ Author: Szymon Lisowiec
+ Github: https://github.com/SzymonLisowiec/SheepToasts
+ License: MIT
+*****************************************************/
 function SheepToasts(config){
 	'use strict';
   
