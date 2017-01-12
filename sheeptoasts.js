@@ -6,7 +6,7 @@
  License: MIT
 *****************************************************/
 function SheepToasts(config){
-	'use strict';
+  'use strict';
   
   if(typeof config == 'undefined') config = {};
   
