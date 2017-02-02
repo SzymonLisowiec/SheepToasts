@@ -2,6 +2,10 @@
 Light weight and simple custom alerts (toasts) in pure JavaScript.
 **You have to use [Animate.css](https://daneden.github.io/animate.css/), to use animations of toasts.**
 
+## Version 1.1
+- Added zIndex for SheepToasts's root.
+- Corrected appending toasts and their buttons.
+
 ## Constructor
 ```JavaScript
 var SheepToasts = new SheepToasts(options);
@@ -20,6 +24,7 @@ var SheepToasts = new SheepToasts(options);
 - **sort** - This have to set on "top" (new toasts on top) or "bottom (new toasts on bottom) [string] [Default: bottom]
 - **toastMargin** - Space between toasts in pixels [integer] [Default: 4]
 - **delayRemove** - The time (in ms) after which toast will be removed (Not working, if toast have buttons) [function] [Default: 5000]
+- **zIndex** - Layer [integer] [Default: 1000]
 - **cssMain** - Basic CSS of toasts.  [object] [Default: below]
 ```JavaScript
 {
