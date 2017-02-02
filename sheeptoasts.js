@@ -1,6 +1,6 @@
 /*****************************************************
  Name: SheepToasts
- Version: 1.0
+ Version: 1.1
  Author: Szymon Lisowiec
  Github: https://github.com/SzymonLisowiec/SheepToasts
  License: MIT
@@ -12,10 +12,11 @@ function SheepToasts(config){
   
   var _private = {
   	
-    animation: (typeof config.animation == 'object')?config.animation:false,
+    animation: config.animation || false,
     sort: (config.sort == 'top')?'top':'bottom',
-    toastMargin: (typeof config.toastMargin == 'number')?config.toastMargin:4,
-    delayRemove: (typeof config.delayRemove == 'number')?config.delayRemove:5000,
+    toastMargin: config.toastMargin || 4,
+    delayRemove: config.delayRemove || 5000,
+   	zIndex: config.zIndex || 1000,
     
     cssMain: {
     	display: 'inline-block',
@@ -108,7 +109,8 @@ function SheepToasts(config){
       _private.root.style.position = 'fixed';
       _private.root.style.top = 0;
       _private.root.style.left = 0;
-      _private.root
+      _private.root.style.left = 0;
+      _private.root.style.zIndex = _private.zIndex;
       _private.body = document.getElementsByTagName('body')[0];
       _private.body.insertBefore(_private.root, _private.body.firstChild);
       delete _private.body;
@@ -151,7 +153,7 @@ function SheepToasts(config){
         	if(key != '_buttons') toast.style[key] = _private.cssModes[mode][key];
        	if(_private.animation) toast.className = 'animated '+_private.animation.in;
         if(typeof animation == 'string') toast.className = 'animated '+animation;
-        _private.root.append(toast);
+        _private.root.appendChild(toast);
         
         if(_private.sort == 'top' && latestToast != null){
         	var d = (toast.style.top != 'auto')?'top':'bottom';
@@ -180,7 +182,7 @@ function SheepToasts(config){
             
             button.addEventListener('focus', function(){ this.style.outline = 'none'; });
             
-            toast.append(button);
+            toast.appendChild(button);
           }
         }else{
         	toast.dataset.timeRemove = new Date().getTime()+_private.delayRemove;
@@ -226,10 +228,8 @@ function SheepToasts(config){
         if(_private.animation) _private.toasts[id].className = 'animated '+_private.animation.out;
         if(typeof animation == 'string') _private.toasts[id].className = 'animated '+animation;
       }else{
-      	//if(typeof _private.toasts[id] != 'undefined'){
           _private.toasts[id].parentNode.removeChild(_private.toasts[id]);
           delete _private.toasts[id];
-        //}
       }
     }
     
