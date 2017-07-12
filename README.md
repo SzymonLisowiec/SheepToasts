@@ -75,9 +75,9 @@ success: {
 }
 ```
 
-##Methods
+## Methods
 
-###show(mode, message, animation, buttons)
+### show(mode, message, animation, buttons)
 - **mode** - success, info, warning or your custom modes.  [string] [Required]
 - **message** - message  [string] [Required]
 - **animation** - Name of animation for show toast. [string] [Default: Using animation from global options]
@@ -95,27 +95,27 @@ SheepToasts.show('info', 'We use cookies to give you the best experience on our 
 });
 ```
 
-###success(message, animation, buttons)
+### success(message, animation, buttons)
 Alias for show() with set mode on "success".
 
-###info(message, animation, buttons)
+### info(message, animation, buttons)
 Alias for show() with set mode on "info".
 
-###warning(message, animation, buttons)
+### warning(message, animation, buttons)
 Alias for show() with set mode on "warning".
 
-###close(id, animation)
+### close(id, animation)
 - **id** - Id of toast. Each toast have id "SheepToast-NumberOfToast", for example "SheepToast-1".  [string] [Required]
 - **animation** - Name of animation for close toast. [string] [Default: Using animation from global options]
 
-##Some examples
+## Some examples
 
-###Show success toast:
+### Show success toast:
 ```JavaScript
 SheepToasts.success('All right.');
 ```
 
-###"Are you sure?" toast
+### "Are you sure?" toast
 ```
 SheepToasts.warning('Are you sure?', null, {
   yes: {
